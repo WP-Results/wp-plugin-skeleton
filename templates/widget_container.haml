@@ -1,0 +1,30 @@
+%script#template{:type=>"text/x-dot-template"}
+  %ul
+    {{ for(var i in it) { }}
+    {{ var a = it[i]; }}
+    %li{:class=>"{{!a.class}}", :data-id=>"{{!a.id}}"}
+      .swa-activity-avatar
+        %a{:href=>"{{!a.user_link}}"} 
+          {{=a.avatar}}
+      .swa-activity-content
+        .swa-activity-header 
+          {{=a.action}}
+        .swa-activity-inner
+          ({{=a.id}}) {{=a.content}}
+    {{ } }}
+.widget.widget_bp_swa_widget
+  .header_stripe
+  .widget_title
+    .widget_title_box
+      %h3.widget-title Recent Activity
+    .widget_tool_bar
+      .tool.me Me
+      .tool.all All
+  .swa-wrap{:style=>"height: {$args['height']}px"}
+    %div#swa-new-item-alert
+      New Activity
+    -$scrollHeight = $args['height']-13;
+    #swa-activities-scroller{:style=>"height: {$scrollHeight}px"}
+      %ul.site-wide-stream.swa-activity-list#swa_activities
+    #swa-loading
+      Loading more activities...

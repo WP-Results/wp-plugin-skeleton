@@ -1,0 +1,9 @@
+[submodule "vendor/doT"]
+	path = vendor/doT
+	url = git@github.com:WP-Results/doT.git
+[submodule "vendor/jquery-waypoints"]
+	path = vendor/jquery-waypoints
+	url = git@github.com:WP-Results/jquery-waypoints.git
+[submodule "vendor/wax"]
+	path = vendor/wax
+	url = git@github.com:/WP-Results/wax.git
